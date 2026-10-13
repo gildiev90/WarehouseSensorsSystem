@@ -1,0 +1,24 @@
+server:
+  port: 0
+
+management:
+  server:
+    port: 9091
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
+  metrics:
+    distribution:
+      percentiles-histogram:
+        warehouse.udp.request.duration: true
+
+warehouse:
+  warehouse-id: warehouse-001
+  temperature-udp-port: 3344
+  humidity-udp-port: 3355
+  central-service-base-url: http://localhost:8080
+  max-in-flight-requests: 100
+  max-pending-sensors: 2000
+  http-response-timeout: 1s
+  max-measurement-age: 5s

@@ -1,0 +1,7 @@
+server:
+  port: 8080
+central:
+  http-port: 8080
+  temperature-threshold: 35
+  humidity-threshold: 50
+  max-measurement-age: 5s
